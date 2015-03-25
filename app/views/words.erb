@@ -1,0 +1,24 @@
+<h1> All These Words Are Real </h1> 
+
+  <%@entries.each do |entry|%>
+
+  <p><b><%=entry.word%></b>: <%=entry.description%></p>
+  <p> as seen in this sentence: <%=entry.example%> </p>
+
+  <form action= "/entry/<%=entry.id%>/edit" method = "GET">
+    <input type = "submit" value = "edit">
+  </form>
+
+  <form action="/entry/<%=entry.id%>" method = "POST">
+   <input type="hidden" name="_method" value="delete" />
+    <input type = "submit" value = "delete">
+</form>
+
+
+
+  <%end%>
+
+
+  <form action= '/home' method = 'GET'>
+    <input type="submit" value="back">
+  </form>

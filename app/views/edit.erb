@@ -1,0 +1,21 @@
+<form action = '/entry/<%=@entry.id%>' method="POST">
+  <input type="hidden" name="_method" value="put" />
+
+  <div>
+    Word:
+    <input type="text" name="entry[word]" value="<%=@entry.word%>"/>
+  </div>
+
+  <div>
+    Description:
+    <textarea name="entry[description]" cols="30" rows="10"><%=@entry.description%></textarea>
+  </div>
+
+
+  <div>
+    Example:
+  <textarea name="entry[example]" cols="30" rows="10"><%=@entry.example%></textarea>
+  </div>
+
+  <input type ="submit" value="update"/>
+</form>

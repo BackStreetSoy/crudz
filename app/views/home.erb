@@ -1,0 +1,18 @@
+<h1> FICTIONARY </h1>
+
+<p> we only have a limited amount of letters, pick one of them </p>
+
+<ul>
+    <%@letters.each do |letter| %>
+    <li> <a href= "/letter/<%=letter.id%>"><%=letter.symbol%></a></li>
+    <%end%>
+</ul>
+
+
+
+
+<p>Or create an Entry: </p>
+
+<form action="/entry/new" method = "GET">
+  <input type="submit" value ="fictionate">
+</form>
