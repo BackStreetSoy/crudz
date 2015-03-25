@@ -18,6 +18,20 @@ get '/home' do
     erb :home 
 end 
 
+
+get '/users/new' do 
+
+    erb :new_user
+end 
+
+post '/users' do 
+    @user = User.create(params[:user])
+    @user.save 
+    session[:user_id] = @user.id
+
+    redirect '/home'
+end 
+
 get '/letter/:id' do 
     @letter = Letter.find_by(id: params[:id])
     @entries = Entry.where(letter_id: @letter.id)
