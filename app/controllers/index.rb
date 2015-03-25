@@ -12,12 +12,10 @@ post '/' do
     redirect '/home'
   end
 end 
-
 get '/home' do 
     @letters = Letter.all
     erb :home 
 end 
-
 
 get '/users/new' do 
 
